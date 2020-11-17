@@ -16,6 +16,7 @@ def register():
    email=request.form['email']
    domain=request.form['domain']
    user={"username":username,"email":email,"domain":domain}
+   #instead of localhost use ip address of instance(AWS instance)
    response=requests.post("http://localhost:4000/api/user/register",json={"user":user})   
    if response.status_code==200:
     return render_template("success.html",username=username)
