@@ -29,6 +29,7 @@ def register():
 @app.route("/api/user/getusers")
 def get_users():
  try:
+  #instead of localhost use ip address of instance(AWS instance)
   response=requests.post("http://localhost:4000/api/user/getusers")
   if response.status_code==200:
    users=response.json()
